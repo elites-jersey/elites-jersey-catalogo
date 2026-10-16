@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="ELITES.JERSEY — catalogo di maglie da calcio. Scopri modelli, foto e prezzi.">
+  <title>ELITES.JERSEY — Catalogo</title>
+  <link rel="icon" href="assets/elites-jersey-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="intro" id="intro" aria-label="Introduzione ELITES.JERSEY">
+    <video class="intro__video" id="introVideo" playsinline preload="metadata" aria-label="Video di presentazione">
+      <source src="assets/intro.mp4" type="video/mp4">
+    </video>
+    <div class="intro__shade"></div>
+    <div class="intro__content" id="introContent">
+      <p class="eyebrow">FOOTBALL SHIRT CATALOGUE</p>
+      <h1>La maglia.<br><span>La tua storia.</span></h1>
+      <button class="button button--light" id="enterButton" type="button">Entra nello store <span aria-hidden="true">↗</span></button>
+      <p class="intro__hint">Catalogo online · nessun acquisto sul sito</p>
+    </div>
+    <button class="skip-button" id="skipButton" type="button">Salta intro <span aria-hidden="true">→</span></button>
+      <button class="sound-button" id="soundButton" type="button" aria-label="Attiva audio del video" hidden>Attiva audio</button>
+</div>
+
+  <header class="site-header" id="catalogTop">
+    <a class="wordmark" href="#catalogTop" aria-label="ELITES.JERSEY, inizio pagina">
+      <img src="assets/elites-jersey-logo.png" alt="" class="wordmark__icon">
+      <span>ELITES<span class="wordmark__dot">.</span>JERSEY</span>
+    </a>
+    <nav class="header-nav" aria-label="Navigazione principale">
+      <a href="#catalogo">Catalogo</a>
+      <a href="#campionati">Campionati</a>
+      <a href="#nazionali">Nazionali</a>
+      <a href="#catalogo" id="poloNavLink">Polo</a>
+      <a href="#info">Info</a>
+    </nav>
+    <a class="header-link" href="#catalogo">Scopri i modelli <span aria-hidden="true">↘</span></a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">ELITES.JERSEY · CATALOGO</p>
+        <h2 id="hero-title">Il calcio<br>si indossa.</h2>
+        <p class="hero__description">Una selezione di maglie per chi vive il gioco, dentro e fuori dal campo.</p>
+        <a class="button button--outline" href="#catalogo">Esplora il catalogo <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="hero__ring"></div>
+        <div class="hero__label">EST.<br>2025</div>
+        <div class="hero__vertical">PASSION IN EVERY THREAD</div>
+        <img class="hero__brand-logo" src="assets/elites-jersey-logo.png" alt="Logo ELITES.JERSEY">
+      </div>
+      <div class="hero__index"><span>01</span> / 03</div>
+    </section>
+
+    <section class="catalog section-wrap" id="catalogo" aria-labelledby="catalog-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LA SELEZIONE</p>
+          <h2 id="catalog-title">Catalogo <span>in evidenza</span></h2>
+        </div>
+        <p class="section-note">Modelli, dettagli e prezzi.<br>Ogni settimana nuove uscite.</p>
+      </div>
+      <section class="league-browser" id="campionati" aria-labelledby="league-title">
+        <div class="league-heading">
+          <div><p class="eyebrow">TROVA LA TUA SQUADRA</p><h3 id="league-title">Campionati <span>2026/27</span></h3></div>
+          <p>Seleziona un campionato e poi una squadra per vedere le maglie disponibili.</p>
+        </div>
+        <div class="league-sections" id="leagueSections"></div>
+      </section>
+      <section class="league-browser national-browser" id="nazionali" aria-labelledby="national-title">
+        <div class="league-heading">
+          <div><p class="eyebrow">CALCIO INTERNAZIONALE</p><h3 id="national-title">Nazionali <span>selezione</span></h3></div>
+          <p>Scegli una nazionale per vedere le maglie disponibili nel catalogo.</p>
+        </div>
+        <div class="team-list national-list" id="nationalTeams"></div>
+      </section>
+      <div class="catalog-tools">
+        <div class="catalog-filters" aria-label="Filtra il catalogo">
+          <button class="filter is-active" id="allProducts" type="button">Tutto il catalogo <span id="productCount">02</span></button>
+          <button class="filter catalog-category-filter" id="shirtsFilter" type="button" data-category="maglia">Maglie</button>
+          <button class="filter catalog-category-filter" id="poloFilter" type="button" data-category="polo">Polo</button>
+        </div>
+        <label class="search"><span class="sr-only">Cerca una maglia</span><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Cerca una maglia…"></label>
+      </div>
+      <p class="selected-team" id="selectedTeam">Tutto il catalogo · campionati, nazionali e polo</p>
+      <p class="customization-note"><span aria-hidden="true">✳</span> Ogni maglia è completamente personalizzabile con nome, numero e badge.</p>
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>Nessuna maglia trovata. Prova con un’altra ricerca.</p>
+      <p class="catalog-footnote">Prezzi indicativi. Questo sito è un catalogo informativo e non raccoglie pagamenti.</p>
+    </section>
+
+    <section class="statement" id="info">
+      <p class="eyebrow">PIÙ DI UNA MAGLIA</p>
+      <h2>Per chi il calcio<br><span>non finisce al 90’.</span></h2>
+      <p>ELITES.JERSEY — passione, cultura e maglie da collezionare.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="wordmark" href="#catalogTop"><img src="assets/elites-jersey-logo.png" alt="" class="wordmark__icon"><span>ELITES<span class="wordmark__dot">.</span>JERSEY</span></a>
+    <p>Catalogo indipendente · © <span id="year"></span> ELITES.JERSEY</p>
+    <a href="#catalogTop">Torna su ↑</a>
+  </footer>
+
+  <div class="gallery-modal" id="galleryModal" role="dialog" aria-modal="true" aria-label="Foto della maglia" hidden>
+    <button class="gallery-close" id="galleryClose" type="button" aria-label="Chiudi foto">×</button>
+    <button class="gallery-arrow gallery-arrow--prev" id="galleryPrev" type="button" aria-label="Foto precedente">‹</button>
+    <figure class="gallery-frame">
+      <img id="galleryImage" src="" alt="">
+      <figcaption><span id="galleryLabel"></span><span id="galleryCount"></span></figcaption>
+    </figure>
+    <button class="gallery-arrow gallery-arrow--next" id="galleryNext" type="button" aria-label="Foto successiva">›</button>
+    <p class="gallery-title" id="galleryTitle"></p>
+  </div>
+</body>
+</html>
